@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -13,15 +12,7 @@ app.use(express.static('public'));
 
 //Add Api Routes
 app.use('/api', apiRoutes);
-// app.get("/api/notes", function (req, res) {
-//     fs.readFile("db/db.json", "utf8", function (err, notes) {
-//         if (err) {
-//             console.log(err)
-//             return
-//         }
-//         res.json(JSON.parse(notes));
-//     })
-//   });
+
 //Add HTML Routes
 app.use('/', htmlRoutes);
 
