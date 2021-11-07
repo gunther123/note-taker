@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.3.1"
   },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunther123/note-taker.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "jest": "^27.3.1"
-  }
+  "bugs": {
+    "url": "https://github.com/gunther123/note-taker/issues"
+  },
+  "homepage": "https://github.com/gunther123/note-taker#readme"
 }
