@@ -7,6 +7,9 @@ router.get('/', (req, res) => {
   });
 
 //Route for the /notes.html page
+router.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/notes.html'));
+  });
 
 //Route to catch all routes that do not exist for the site
 router.get('*', (req, res) => {
