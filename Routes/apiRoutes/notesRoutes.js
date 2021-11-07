@@ -28,12 +28,27 @@ router.post("/notes", function (req, res) {
             notesArr = JSON.parse(data);
             notesArr.push({ "id": notesArr.length + 1, "title": currentNote.title, "text": currentNote.text });
         }
-        // updated notes pushed to db.json
+        // Adds new note to db.json
         fs.writeFile((path.join("./db/db.json")), JSON.stringify(notesArr, null, 2), function (error) {
             if (error) { return console.log(error); }
             res.json(notesArr);
         });
     });
+  });
+
+  router.delete("/notes/:id", function (req, res) {
+    //Get current notes
+    let currentNotes = fs.readFileSync("./db/db.json", "utf8");
+    //Get current notes in an array
+    currentNotes = JSON.parse(currentNotes);
+    //Returns all notes but the id needing to be deleted
+    currentNotes = currentNotes.filter(function (note) {
+      return note.id != req.params.id;
+    });
+    //Adds list of all filtered notes
+    fs.writeFileSync("./db/db.json", JSON.stringify(currentNotes));
+
+    res.json(currentNotes);
   });
 
   module.exports = router
