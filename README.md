@@ -3,7 +3,7 @@
 
 ## Description 
 
-This app is to be able to take notes, write shopping lists, or reminders to yourself. You the ability to create new ones, view old ones and delete any notes you don't need anymore!
+This app is to allow people to be able to take notes, write shopping lists, or reminders to yourself. You the ability to create new ones, view old ones and delete any notes you don't need anymore!
 
 
 ## Table of Contents 
