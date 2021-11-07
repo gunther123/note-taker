@@ -12,15 +12,16 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //Add Api Routes
-app.get("/api/notes", function (req, res) {
-    fs.readFile("db/db.json", "utf8", function (err, notes) {
-        if (err) {
-            console.log(err)
-            return
-        }
-        res.json(JSON.parse(notes));
-    })
-  });
+app.use('/api', apiRoutes);
+// app.get("/api/notes", function (req, res) {
+//     fs.readFile("db/db.json", "utf8", function (err, notes) {
+//         if (err) {
+//             console.log(err)
+//             return
+//         }
+//         res.json(JSON.parse(notes));
+//     })
+//   });
 //Add HTML Routes
 app.use('/', htmlRoutes);
 
