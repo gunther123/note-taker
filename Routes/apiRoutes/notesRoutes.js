@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
 
 //Gets current notes from db.json file
 router.get("/notes", function (req, res) {
@@ -14,8 +14,8 @@ router.get("/notes", function (req, res) {
 
 //Allows writing of new note to db.json
 router.post("/notes", function (req, res) {
-    const currentNote = req.body
-    let notesArr = []
+    const currentNote = req.body;
+    let notesArr = [];
     fs.readFile(path.join("./db/db.json"), "utf8", function (err, data) {
         if (err) {
             return console.log(err);
@@ -50,4 +50,4 @@ router.post("/notes", function (req, res) {
     res.json(currentNotes);
   });
 
-  module.exports = router
+  module.exports = router;
