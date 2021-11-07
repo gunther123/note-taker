@@ -4,13 +4,12 @@ const path = require('path')
 
 //Gets current notes from db.json file
 router.get("/notes", function (req, res) {
-    fs.readFile("./db/db.json", (err, data) => {
-      if (err) {
-        throw err;
-      }
-      const notes = JSON.parse(data);
-      res.json(notes);
-    });
+    //Read current DB file to get current notes
+    let currentNotes = fs.readFileSync("./db/db.json", "utf8");
+        //Parse data from file into an array
+        currentNotes = JSON.parse(currentNotes);
+        //Return all current notes
+        res.json(currentNotes);
   });
 
 //Allows writing of new note to db.json
